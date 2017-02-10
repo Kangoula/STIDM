@@ -9,11 +9,13 @@ import io.swagger.annotations.ApiParam;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Role;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -32,7 +34,7 @@ public class GameResource {
     private final Logger log = LoggerFactory.getLogger(GameResource.class);
 
     private static final String ENTITY_NAME = "game";
-        
+
     private final GameService gameService;
 
     public GameResource(GameService gameService) {
@@ -48,6 +50,7 @@ public class GameResource {
      */
     @PostMapping("/games")
     @Timed
+    @PreAuthorize("hasRole('ROLE_EDITOR') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<Game> createGame(@Valid @RequestBody Game game) throws URISyntaxException {
         log.debug("REST request to save Game : {}", game);
         if (game.getId() != null) {
@@ -70,6 +73,7 @@ public class GameResource {
      */
     @PutMapping("/games")
     @Timed
+    @PreAuthorize("hasRole('ROLE_EDITOR') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<Game> updateGame(@Valid @RequestBody Game game) throws URISyntaxException {
         log.debug("REST request to update Game : {}", game);
         if (game.getId() == null) {
@@ -90,6 +94,7 @@ public class GameResource {
      */
     @GetMapping("/games")
     @Timed
+    @PreAuthorize("hasRole('ROLE_ANONYMOUS') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<List<Game>> getAllGames(@ApiParam Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Games");
@@ -106,6 +111,7 @@ public class GameResource {
      */
     @GetMapping("/games/{id}")
     @Timed
+    @PreAuthorize("hasRole('ROLE_ANONYMOUS') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<Game> getGame(@PathVariable String id) {
         log.debug("REST request to get Game : {}", id);
         Game game = gameService.findOne(id);
@@ -120,6 +126,7 @@ public class GameResource {
      */
     @DeleteMapping("/games/{id}")
     @Timed
+    @PreAuthorize("hasRole('ROLE_EDITOR') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<Void> deleteGame(@PathVariable String id) {
         log.debug("REST request to delete Game : {}", id);
         gameService.delete(id);
