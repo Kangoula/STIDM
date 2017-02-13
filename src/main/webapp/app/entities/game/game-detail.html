@@ -1,55 +1,58 @@
+<div class="container-fluid">
+    <!--<h2><span data-translate="stidmApp.game.detail.title">Game</span> {{vm.game.id}}</h2>-->
 
-<div>
-    <h2><span data-translate="stidmApp.game.detail.title">Game</span> {{vm.game.id}}</h2>
-    <hr>
-    <jhi-alert-error></jhi-alert-error>
-    <dl class="row jh-entity-details">
-        <dt><span data-translate="stidmApp.game.ref">Ref</span></dt>
-        <dd>
-            <span>{{vm.game.ref}}</span>
-        </dd>
-        <dt><span data-translate="stidmApp.game.name">Name</span></dt>
-        <dd>
-            <span>{{vm.game.name}}</span>
-        </dd>
-        <dt><span data-translate="stidmApp.game.type">Type</span></dt>
-        <dd>
-            <span>{{vm.game.type}}</span>
-        </dd>
-        <dt><span data-translate="stidmApp.game.release">Release</span></dt>
-        <dd>
-            <span>{{vm.game.release | date:'mediumDate'}}</span>
-        </dd>
-        <dt><span data-translate="stidmApp.game.description">Description</span></dt>
-        <dd>
-            <span>{{vm.game.description}}</span>
-        </dd>
-        <dt><span data-translate="stidmApp.game.cover">Cover</span></dt>
-        <dd>
-            <span>{{vm.game.cover}}</span>
-        </dd>
-        <dt><span data-translate="stidmApp.game.video">Video</span></dt>
-        <dd>
-            <span>{{vm.game.video}}</span>
-        </dd>
-        <dt><span data-translate="stidmApp.game.keyRef">Key Ref</span></dt>
-        <dd>
-            <span>{{vm.game.keyRef}}</span>
-        </dd>
-        <dt><span data-translate="stidmApp.game.price">Price</span></dt>
-        <dd>
-            <span>{{vm.game.price}}</span>
-        </dd>
-    </dl>
+    <div class="col-sm-7">
+        <h2>Fiche du jeu : {{vm.game.name}}</h2>
+        <p style="text-align: right"><span>(Réf: {{vm.game.ref}})</span></p>
+        <hr>
+        <jhi-alert-error></jhi-alert-error>
+        <p style="text-align: center">
+            <button type="button" class="btn btn-success btn-lg">
+                Pour seulement <span style="font-size: 1.3em;">{{vm.game.price}}</span><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>
+            </button>
+        </p>
 
-    <button type="submit"
-            ui-sref="{{ vm.previousState }}"
-            class="btn btn-info">
-        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
-    </button>
+        <br/><br/>
+        <div style="font-size: 1.2em;">
+            <table>
+                <tr>
+                    <td><span class="label label-default">Type</span></td>
+                    <td>{{vm.game.type}}</td>
+                </tr>
 
-    <button type="button" ui-sref="game-detail.edit({id:vm.game.id})" class="btn btn-primary">
-        <span class="glyphicon glyphicon-pencil"></span>
-        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
-    </button>
+                <tr>
+                    <td> <span class="label label-default">Date de sortie</span></td>
+                    <td>{{vm.game.release | date:'mediumDate'}}</td>
+                </tr>
+
+                <tr>
+                    <td> <span class="label label-default">Description</span></td>
+                    <td>{{vm.game.description}}</td>
+                </tr>
+
+                <tr>
+                    <td> <span class="label label-default">Vidéo</span></td>
+                    <td>{{vm.game.video}}</td>
+                </tr>
+            </table>
+        </div>
+        <br/><br/>
+
+
+        <button type="submit"
+                ui-sref="{{ vm.previousState }}"
+                class="btn btn-info">
+            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+        </button>
+
+        <button type="button" ui-sref="game-detail.edit({id:vm.game.id})" class="btn btn-primary">
+            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+        </button>
+    </div>
+    <div class="col-sm-5" class="game_cover">
+        <img src="{{vm.game.cover}}" alt="Image du jeu" width="100%"/>
+    </div>
+
+
 </div>
