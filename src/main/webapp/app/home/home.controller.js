@@ -1,13 +1,13 @@
-(function() {
+/*(function() {
     'use strict';
 
     angular
         .module('stidmApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
+    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state', 'GameService'];
 
-    function HomeController ($scope, Principal, LoginService, $state) {
+    function HomeController ($scope, Principal, LoginService, $state, GameService) {
         var vm = this;
 
         vm.account = null;
@@ -30,4 +30,4 @@
             $state.go('register');
         }
     }
-})();
+})();*/

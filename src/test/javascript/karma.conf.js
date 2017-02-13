@@ -33,6 +33,7 @@ module.exports = function (config) {
             'src/main/webapp/bower_components/angular-cookies/angular-cookies.js',
             'src/main/webapp/bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js',
             'src/main/webapp/bower_components/ngstorage/ngStorage.js',
+            'src/main/webapp/bower_components/angular-loading-bar/build/loading-bar.js',
             'src/main/webapp/bower_components/angular-resource/angular-resource.js',
             'src/main/webapp/bower_components/angular-sanitize/angular-sanitize.js',
             'src/main/webapp/bower_components/angular-translate/angular-translate.js',
@@ -42,6 +43,7 @@ module.exports = function (config) {
             'src/main/webapp/bower_components/angular-ui-router/release/angular-ui-router.js',
             'src/main/webapp/bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.js',
             'src/main/webapp/bower_components/ng-file-upload/ng-file-upload.js',
+            'src/main/webapp/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
             'src/main/webapp/bower_components/angular-mocks/angular-mocks.js',
             // endbower
             'src/main/webapp/app/app.module.js',

@@ -16,7 +16,7 @@
                     controller: 'NavbarController',
                     controllerAs: 'vm'
                 }
-            },
+            }/*,
             resolve: {
                 authorize: ['Auth',
                     function (Auth) {
@@ -26,7 +26,7 @@
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('global');
                 }]
-            }
+            }*/
         });
     }
 })();

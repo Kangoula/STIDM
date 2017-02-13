@@ -10,8 +10,8 @@
     function stateConfig($stateProvider) {
         $stateProvider
         .state('game', {
-            parent: 'entity',
-            url: '/game',
+            parent: 'app',
+            url: '/',
             data: {
                 authorities: ['ROLE_USER'],
                 pageTitle: 'stidmApp.game.home.title'
@@ -32,10 +32,10 @@
             }
         })
         .state('game-detail', {
-            parent: 'game',
+            parent: 'app',
             url: '/game/{id}',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: ['ROLE_USER', ['ROLE_ANONYMOUS']],
                 pageTitle: 'stidmApp.game.detail.title'
             },
             views: {
@@ -67,7 +67,7 @@
             parent: 'game-detail',
             url: '/detail/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -89,10 +89,10 @@
             }]
         })
         .state('game.new', {
-            parent: 'game',
-            url: '/new',
+            parent: 'app',
+            url: '/game/new',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -128,7 +128,7 @@
             parent: 'game',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_AMDIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -153,7 +153,7 @@
             parent: 'game',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({

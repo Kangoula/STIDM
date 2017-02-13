@@ -1,4 +1,4 @@
-(function() {
+/*(function() {
     'use strict';
 
     angular
@@ -13,4 +13,4 @@
             parent: 'app'
         });
     }
-})();
+})();*/
