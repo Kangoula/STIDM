@@ -35,7 +35,7 @@
             parent: 'app',
             url: '/game/{id}',
             data: {
-                authorities: ['ROLE_USER', ['ROLE_ANONYMOUS']],
+                
                 pageTitle: 'stidmApp.game.detail.title'
             },
             views: {
