@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="stidmApp.cartElement.detail.title">Cart Element</span> {{vm.cartElement.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="stidmApp.cartElement.idGame">Id Game</span></dt>
+        <dd>
+            <span>{{vm.cartElement.idGame}}</span>
+        </dd>
+        <dt><span data-translate="stidmApp.cartElement.refGame">Ref Game</span></dt>
+        <dd>
+            <span>{{vm.cartElement.refGame}}</span>
+        </dd>
+        <dt><span data-translate="stidmApp.cartElement.nameGame">Name Game</span></dt>
+        <dd>
+            <span>{{vm.cartElement.nameGame}}</span>
+        </dd>
+        <dt><span data-translate="stidmApp.cartElement.price">Price</span></dt>
+        <dd>
+            <span>{{vm.cartElement.price}}</span>
+        </dd>
+        <dt><span data-translate="stidmApp.cartElement.idUser">Id User</span></dt>
+        <dd>
+            <span>{{vm.cartElement.idUser}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="cart-element-detail.edit({id:vm.cartElement.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

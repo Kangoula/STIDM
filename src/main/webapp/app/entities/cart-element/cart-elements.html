@@ -1,0 +1,64 @@
+<div>
+    <h2 data-translate="stidmApp.cartElement.home.title">Cart Elements</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="cart-element.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="stidmApp.cartElement.home.createLabel">
+                        Create new Cart Element
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="stidmApp.cartElement.idGame">Id Game</span></th>
+                    <th><span data-translate="stidmApp.cartElement.refGame">Ref Game</span></th>
+                    <th><span data-translate="stidmApp.cartElement.nameGame">Name Game</span></th>
+                    <th><span data-translate="stidmApp.cartElement.price">Price</span></th>
+                    <th><span data-translate="stidmApp.cartElement.idUser">Id User</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cartElement in vm.cartElements track by cartElement.id">
+                    <td><a ui-sref="cart-element-detail({id:cartElement.id})">{{cartElement.id}}</a></td>
+                    <td>{{cartElement.idGame}}</td>
+                    <td>{{cartElement.refGame}}</td>
+                    <td>{{cartElement.nameGame}}</td>
+                    <td>{{cartElement.price}}</td>
+                    <td>{{cartElement.idUser}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="cart-element-detail({id:cartElement.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="cart-element.edit({id:cartElement.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="cart-element.delete({id:cartElement.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

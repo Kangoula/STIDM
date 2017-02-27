@@ -1,0 +1,26 @@
+{
+    "stidmApp": {
+        "cartElement" : {
+            "home": {
+                "title": "CartElements",
+                "createLabel": "Créer un nouveau Cart Element",
+                "createOrEditLabel": "Créer ou éditer un Cart Element",
+                "search": "Recherche pour Cart Element"
+            },
+            "created": "Un nouveau Cart Element a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Cart Element avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Cart Element avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Cart Element {{ id }} ?"
+            },
+            "detail": {
+                "title": "Cart Element"
+            },
+            "idGame": "Id Game",
+            "refGame": "Ref Game",
+            "nameGame": "Name Game",
+            "price": "Price",
+            "idUser": "Id User"
+        }
+    }
+}
