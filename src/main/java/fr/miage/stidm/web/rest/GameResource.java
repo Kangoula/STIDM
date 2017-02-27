@@ -94,7 +94,7 @@ public class GameResource {
      */
     @GetMapping("/games")
     @Timed
-    @PreAuthorize("hasRole('ROLE_ANONYMOUS') or hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ANONYMOUS') or hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<List<Game>> getAllGames(@ApiParam Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Games");
@@ -111,7 +111,7 @@ public class GameResource {
      */
     @GetMapping("/games/{id}")
     @Timed
-    @PreAuthorize("hasRole('ROLE_ANONYMOUS') or hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ANONYMOUS') or hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<Game> getGame(@PathVariable String id) {
         log.debug("REST request to get Game : {}", id);
         Game game = gameService.findOne(id);
